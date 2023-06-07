@@ -8,9 +8,11 @@ class LoginService{
 
 final String url = "${apiUrl}/login";
 
-Future<UserModel?> loginUser(var email, var password) async{
-  
-  final response = await Dio().post(url, data: userModelToJson(UserModel(email: email, password: password))); 
+Future<String?> loginUser(var email, var password) async{
+
+  UserModel user = UserModel(email: email, password: password);
+
+  final response = await Dio().post(url, data: userModelToJson(user)); 
   
   if(response.statusCode == 200){
     debugPrint(response.data["token"]);
