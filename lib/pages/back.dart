@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clothes/account.dart';
-import 'package:flutter_clothes/login.dart';
+import 'package:flutter_clothes/pages/home.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class BackPage extends StatefulWidget {
+  const BackPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<BackPage> createState() => _BackPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _BackPageState extends State<BackPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,17 +23,17 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            right: 20,
+            left: 20,
             top: 50,
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: ((context) => const AccountPage())));
+                    builder: ((context) => const HomePage())));
               },
               child: Row(
-                children: const [
+                children: [
                   Text(
-                    "Sign Up",
+                    "Back",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
@@ -49,11 +48,11 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            bottom: 300,
+            bottom: 250,
             child: Container(
               width: MediaQuery.of(context).size.width,
               child: const Text(
-                "Ideal Store For Shopping",
+                "Make your purchases as",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 30,
@@ -63,52 +62,48 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            left: 20,
-            right: 20,
-            bottom: 200,
-            child: TextButton(
-              onPressed: (() {}),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                padding: const EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  border: Border.all(width: 0.2, color: Colors.white),
-                ),
-                child: const Text(
-                  "Sign in With Email",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-              bottom: 110,
+            bottom: 130,
               left: 20,
-              right: 20,
               height: MediaQuery.of(context).size.height / 13,
-              child: ElevatedButton(
+            child: Row(
+              children:[
+              SizedBox(
+                width: 150,
+                height: 45,
+                child: ElevatedButton(
+                  onPressed: (() {}),
+                  style: ElevatedButton.styleFrom(
+                    
+                    backgroundColor:
+                        Color.fromARGB(255, 236, 76, 23),
+                  ),
+                  child: Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Text(
+                          "MAN",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      ),),
+                      SizedBox(width: 50,),
+              SizedBox(
+                width: 150,
+                height: 45,
+                child: ElevatedButton(
                   onPressed: (() {}),
                   style: ElevatedButton.styleFrom(
                     backgroundColor:
-                        Color.fromARGB(255, 234, 88, 39),
+                        Color.fromARGB(255, 236, 76, 23),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children:[
-                      CircleAvatar(child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6StlUk0XUfO9mhRGR2qKhkmMvQCLSM2IXyw&usqp=CAU")),
-                      Padding(
+                  child: Padding(
                         padding: EdgeInsets.only(left: 10),
                         child: Text(
-                          "Continue with Facebook",
+                          "WOMAN",
                           style: TextStyle(fontSize: 20),
                         ),
-                      )
-                    ],
-                  )))
+                      ),
+                      ))
+              ]))
         ],
       ),
     );
