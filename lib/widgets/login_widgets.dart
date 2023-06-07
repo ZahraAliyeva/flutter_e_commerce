@@ -17,21 +17,26 @@ class _LoginWidgetState extends State<LoginWidget> {
 
   late String enteredEmail ;
   late String enteredPassword;
+
   @override
   Widget build(BuildContext context) {
-    return  Column(children: [
-      Text("Email"),
+    return  Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Text("Email", style: TextStyle(fontWeight: FontWeight.bold)),
       SizedBox(height: 10,),
       TextField(
         controller: email,
-      ),
-      Text("pasword"),
+        decoration: const InputDecoration( hintText: "example54@gmail.com", border: OutlineInputBorder()),),
+        const SizedBox( height: 20,),
+      Text("pasword", style: TextStyle(fontWeight: FontWeight.bold)),
       SizedBox(height: 10,),
       TextField(
         controller: password,
+        decoration: const InputDecoration( hintText: "***********", border: OutlineInputBorder()),
       ),
-
-      SizedBox(width: MediaQuery.of(context).size.width*10,
+      const SizedBox(height: 30),
+      SizedBox(width: MediaQuery.of(context).size.width*0.9,
       child: ElevatedButton(onPressed: (){
         setState(() {});
         if(email.text.isNotEmpty && password.text.isNotEmpty){
@@ -41,7 +46,29 @@ class _LoginWidgetState extends State<LoginWidget> {
           var data = loginService.loginUser(enteredEmail, enteredPassword);
           // data.then((value) => debugPrint(value));
         }       
-      }, child:Text("data") ),)
-    ],);
+      }, 
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Color.fromARGB(255, 235, 88, 14),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+        shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5)
+              ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Sign in",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ],
+        )
+      ),
+      ),
+      const SizedBox(
+          height: 30,
+        ),
+    ],
+    );
   }
 }

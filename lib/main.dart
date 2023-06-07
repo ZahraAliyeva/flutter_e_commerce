@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clothes/login_second.dart';
 import 'package:flutter_clothes/pages/back.dart';
 import 'package:flutter_clothes/pages/home.dart';
 import 'package:flutter_clothes/pages/login.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BackPage(),
+      home: LoginPage(),
     );
   }
 }

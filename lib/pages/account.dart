@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clothes/pages/login.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -60,7 +61,31 @@ class _AccountPageState extends State<AccountPage> {
           // Text("____________________OR____________________", style: TextStyle(color: Color.fromARGB(255, 176, 173, 173)),),
           ContinueWith(text: "Continue with Google", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST-jWZ9zMMN1g2g7X__VPJ7p_LoekF2mQFzA&usqp=CAU",),
           ContinueWith(text: "Continue with Facebook", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6StlUk0XUfO9mhRGR2qKhkmMvQCLSM2IXyw&usqp=CAU",),
-          TextAdapter(text:"Don't have an account? "),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+              child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Already have an account?",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const LoginPage()));
+                        },
+                        child: const Text(
+                          "Sign in",
+                          style: TextStyle(
+                              color: Colors.blue, fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
+                  ),
+              ),
+              )
         ],
       ),
     );
