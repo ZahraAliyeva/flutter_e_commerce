@@ -23,14 +23,14 @@ class _LoginWidgetState extends State<LoginWidget> {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-      Text("Email", style: TextStyle(fontWeight: FontWeight.bold)),
-      SizedBox(height: 10,),
+      const Text("Email", style: TextStyle(fontWeight: FontWeight.bold)),
+      const SizedBox(height: 10,),
       TextField(
         controller: email,
         decoration: const InputDecoration( hintText: "example54@gmail.com", border: OutlineInputBorder()),),
         const SizedBox( height: 20,),
-      Text("pasword", style: TextStyle(fontWeight: FontWeight.bold)),
-      SizedBox(height: 10,),
+      const Text("password", style: TextStyle(fontWeight: FontWeight.bold)),
+      const SizedBox(height: 10,),
       TextField(
         controller: password,
         keyboardType: TextInputType.visiblePassword,
@@ -67,7 +67,7 @@ class _LoginWidgetState extends State<LoginWidget> {
         }       
       }, 
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color.fromARGB(255, 235, 88, 14),
+        backgroundColor: const Color.fromARGB(255, 235, 88, 14),
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
         shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5)
@@ -75,7 +75,7 @@ class _LoginWidgetState extends State<LoginWidget> {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Text(
                   "Sign in",
                   style: TextStyle(color: Colors.white),
