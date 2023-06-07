@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clothes/pages/account.dart';
-import 'package:flutter_clothes/pages/login.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -94,13 +93,13 @@ class _HomePageState extends State<HomePage> {
                   onPressed: (() {}),
                   style: ElevatedButton.styleFrom(
                     backgroundColor:
-                        Color.fromARGB(255, 234, 88, 39),
+                        const Color.fromARGB(255, 234, 88, 39),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children:[
                       CircleAvatar(child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6StlUk0XUfO9mhRGR2qKhkmMvQCLSM2IXyw&usqp=CAU")),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 10),
                         child: Text(
                           "Continue with Facebook",

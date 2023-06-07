@@ -27,14 +27,14 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             title: Column(
-              children: [
-                Text("Log Into Your Account", textScaleFactor: 1),
+              children: const[
+                 Text("Log Into Your Account", textScaleFactor: 1),
               ],
             ),
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.only(left: 30, top: 30, right: 20),
+              padding: const EdgeInsets.only(left: 30, top: 30, right: 20),
               child: Column(children: [
                 const LoginWidget(),
                  Row(children: const[
@@ -145,44 +145,6 @@ class _LoginPageState extends State<LoginPage> {
           // ContinueWith(text: "Continue with Google", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST-jWZ9zMMN1g2g7X__VPJ7p_LoekF2mQFzA&usqp=CAU",),
           // ContinueWith(text: "Continue with Facebook", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6StlUk0XUfO9mhRGR2qKhkmMvQCLSM2IXyw&usqp=CAU",),
         ],
-      ),
-    );
-  }
-}
-
-
-class ContinueWith extends StatelessWidget {
-  String text;
-  String image;
-  ContinueWith({
-    required this.text,
-    required this.image,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: EdgeInsets.only(left: 30, right: 30, top: 20),
-        child: SizedBox(
-          height: 50,
-          child: ElevatedButton(
-          style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.white),
-                    side: MaterialStateProperty.all(const BorderSide(width: 0.4, color: Colors.black)),
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)))
-                  ),
-          onPressed: () {},
-        child: Row(
-          children: [
-            CircleAvatar(child: Image.network(image),
-            radius: 15,),
-            SizedBox(width: 15,),
-          Text(text, style: TextStyle(color: Color.fromARGB(255, 176, 173, 173)),)
-        ],)),)
       ),
     );
   }

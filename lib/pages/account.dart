@@ -43,15 +43,15 @@ class _AccountPageState extends State<AccountPage> {
           TextAdapter(text:"You agree the terms and privacy policy"),
           SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.only(left: 30, top: 30, right: 20),
+              padding: const EdgeInsets.only(left: 30, top: 30, right: 20),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 235, 88, 14),
+                  primary: const Color.fromARGB(255, 235, 88, 14),
                 ),
                 onPressed: () {},
                 child: Container(
-                    padding: EdgeInsets.all(20),
-                    child: Text(
+                    padding: const EdgeInsets.all(20),
+                    child: const Text(
                       "Sign up",
                       style: TextStyle(fontSize: 20),
                     )),
@@ -63,7 +63,7 @@ class _AccountPageState extends State<AccountPage> {
           ContinueWith(text: "Continue with Facebook", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6StlUk0XUfO9mhRGR2qKhkmMvQCLSM2IXyw&usqp=CAU",),
           SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+              padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
               child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -105,7 +105,7 @@ class AdapterMethod extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+        padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
         child: TextField(
           obscureText: answer,
           obscuringCharacter: '*',
@@ -130,7 +130,7 @@ class ContinueWith extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+        padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
         child: SizedBox(
           height: 50,
           child: ElevatedButton(
@@ -146,8 +146,8 @@ class ContinueWith extends StatelessWidget {
           children: [
             CircleAvatar(child: Image.network(image),
             radius: 15,),
-            SizedBox(width: 15,),
-          Text(text, style: TextStyle(color: Color.fromARGB(255, 176, 173, 173)),)
+            const SizedBox(width: 15,),
+          Text(text, style: const TextStyle(color: Color.fromARGB(255, 176, 173, 173)),)
         ],)),)
       ),
     );
@@ -162,10 +162,10 @@ class TextAdapter extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.only(left: 30, top: 20),
+        padding: const EdgeInsets.only(left: 30, top: 20),
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w600,
           ),

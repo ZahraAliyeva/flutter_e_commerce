@@ -31,7 +31,7 @@ class _BackPageState extends State<BackPage> {
                     builder: ((context) => const HomePage())));
               },
               child: Row(
-                children: [
+                children: const [
                   Text(
                     "Back",
                     style: TextStyle(
@@ -75,9 +75,9 @@ class _BackPageState extends State<BackPage> {
                   style: ElevatedButton.styleFrom(
                     
                     backgroundColor:
-                        Color.fromARGB(255, 236, 76, 23),
+                        const Color.fromARGB(255, 236, 76, 23),
                   ),
-                  child: Padding(
+                  child: const Padding(
                         padding: EdgeInsets.only(left: 10),
                         child: Text(
                           "MAN",
@@ -85,7 +85,7 @@ class _BackPageState extends State<BackPage> {
                         ),
                       ),
                       ),),
-                      SizedBox(width: 50,),
+                      const SizedBox(width: 50,),
               SizedBox(
                 width: 150,
                 height: 45,
@@ -93,9 +93,9 @@ class _BackPageState extends State<BackPage> {
                   onPressed: (() {}),
                   style: ElevatedButton.styleFrom(
                     backgroundColor:
-                        Color.fromARGB(255, 236, 76, 23),
+                        const Color.fromARGB(255, 236, 76, 23),
                   ),
-                  child: Padding(
+                  child: const Padding(
                         padding: EdgeInsets.only(left: 10),
                         child: Text(
                           "WOMAN",
