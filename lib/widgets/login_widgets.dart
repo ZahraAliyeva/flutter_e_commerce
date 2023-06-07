@@ -1,6 +1,6 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_clothes/pages/home.dart';
+import 'package:flutter_clothes/pages/test.dart';
 import 'package:flutter_clothes/service/login_service.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -33,9 +33,27 @@ class _LoginWidgetState extends State<LoginWidget> {
       SizedBox(height: 10,),
       TextField(
         controller: password,
-        decoration: const InputDecoration( hintText: "***********", border: OutlineInputBorder()),
+        keyboardType: TextInputType.visiblePassword,
+        decoration: const InputDecoration( hintText: "***********", 
+        border: OutlineInputBorder()),
       ),
-      const SizedBox(height: 30),
+      const SizedBox(
+          height: 5,
+        ),
+         Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: const[
+            TextButton(
+              onPressed: null,
+              child: Text(
+                "Forget Password?",
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
+            )
+          ],
+        ),
+      const SizedBox(height: 20),
       SizedBox(width: MediaQuery.of(context).size.width*0.9,
       child: ElevatedButton(onPressed: (){
         setState(() {});
@@ -44,7 +62,8 @@ class _LoginWidgetState extends State<LoginWidget> {
           enteredPassword = password.text;
           debugPrint(enteredEmail + " " + enteredPassword);
           var data = loginService.loginUser(enteredEmail, enteredPassword);
-          // data.then((value) => debugPrint(value));
+          data.then((value) => Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const HomePage())));
         }       
       }, 
       style: ElevatedButton.styleFrom(
@@ -66,7 +85,7 @@ class _LoginWidgetState extends State<LoginWidget> {
       ),
       ),
       const SizedBox(
-          height: 30,
+          height: 0,
         ),
     ],
     );

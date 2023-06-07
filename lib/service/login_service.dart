@@ -15,7 +15,7 @@ Future<String?> loginUser(var email, var password) async{
   final response = await Dio().post(url, data: userModelToJson(user)); 
   
   if(response.statusCode == 200){
-    debugPrint(response.data["token"]);
+    // debugPrint(response.data["token"]);
     return response.data["token"];
   } else {
     debugPrint("UnSuccces");
