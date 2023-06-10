@@ -27,9 +27,11 @@ class _LoginWidgetState extends State<LoginWidget> {
       const SizedBox(height: 10,),
       TextField(
         controller: email,
-        decoration: const InputDecoration( hintText: "example54@gmail.com", border: OutlineInputBorder()),),
+        decoration: const InputDecoration( hintText: "example54@gmail.com", border: OutlineInputBorder()),
+        ),
         const SizedBox( height: 20,),
-      const Text("password", style: TextStyle(fontWeight: FontWeight.bold)),
+      const Text("password", style: TextStyle(fontWeight: FontWeight.bold)
+      ),
       const SizedBox(height: 10,),
       TextField(
         controller: password,
@@ -55,7 +57,8 @@ class _LoginWidgetState extends State<LoginWidget> {
         ),
       const SizedBox(height: 20),
       SizedBox(width: MediaQuery.of(context).size.width*0.9,
-      child: ElevatedButton(onPressed: (){
+      child: ElevatedButton(
+        onPressed: (){
         setState(() {});
         if(email.text.isNotEmpty && password.text.isNotEmpty){
           enteredEmail = email.text;
