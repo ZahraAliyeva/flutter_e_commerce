@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_clothes/model/product_model.dart';
+import 'package:flutter_clothes/service/product_service.dart';
 import 'package:flutter_clothes/service/user_info.dart';
 import 'package:flutter_clothes/widgets/carousel_widget.dart';
+import 'package:flutter_clothes/widgets/product_widget.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -54,6 +57,15 @@ class _ProductPageState extends State<ProductPage> {
                         ),
                 ],),
                 CaroulselW(),
+                SizedBox(height: 10,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                  Text("Our Products", style: TextStyle(fontSize: 20),),
+                  Text("See All", style: TextStyle(fontSize: 8, color: Color.fromARGB(255, 245, 126, 29)),),
+                ],),
+                SizedBox(height: 5,),
+                ProductWidget(),
               ],),
               ),
               ),
